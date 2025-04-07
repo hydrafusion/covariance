@@ -1,4 +1,3 @@
-
 #include "c_src/sample_covariance_lapacke.h"
 #include <stdio.h>
 
@@ -8,8 +7,6 @@ int main() {
 
   // rows,colums, data
   SampleCovarResult result = sample_covar(2, 2, (double *)data);
-
-  printf("Covariance Matrix:\n");
 
   // Print the result
   printf("Covariance Matrix:\n");

@@ -22,7 +22,7 @@ static void center_matrix_inplace(Matrix *mat) {
   }
 }
 
-static Matrix compute_covariance_fast(Matrix *X) {
+static Matrix compute_covariance_matrix(Matrix *X) {
   center_matrix_inplace(X);
 
   Matrix cov = {
@@ -42,7 +42,7 @@ static Matrix compute_covariance_fast(Matrix *X) {
 SampleCovarResult sample_covar(int rows, int columns, double *data) {
   Matrix X = {.rows = rows, .columns = columns, .data = data};
 
-  Matrix cov = compute_covariance_fast(&X);
+  Matrix cov = compute_covariance_matrix(&X);
 
   SampleCovarResult result = {
       .rows = cov.rows, .columns = cov.columns, .covar_matrix = cov.data};
