@@ -1,12 +1,16 @@
-# 📈 Sample Covariance Matrix (C Implementation)
+# 📈 Sample Covariance Matrix
 
-This library provides a **fast and efficient** implementation of the **sample covariance matrix** calculation using **C** and **LAPACKE/CBLAS**. The key design is based on a **single heap allocation flat buffer** for performance and interoperability.
+This library provides a **fast and efficient** implementation of
+the **sample covariance matrix** calculation using **C** and **LAPACKE/CBLAS**.
+The key design is based on a **single heap allocation flat buffer** for performance
+and interoperability.
 
 ---
 
 ## 🚀 Why This Project?
 
-The main motivation is to provide a **lightweight**, **language-agnostic**, and **performance-critical** sample covariance calculation routine. Here's why:
+The main motivation is to provide a **lightweight**, **language-agnostic**,
+and **performance-critical** sample covariance calculation routine. Here's why:
 
 - ✅ **Low-level control** with C allows you to fine-tune performance.
 - ✅ **Single memory allocation** reduces overhead and improves cache efficiency.
@@ -20,9 +24,7 @@ The main motivation is to provide a **lightweight**, **language-agnostic**, and 
 
 This library computes the **sample covariance matrix**:
 
-\[
-\text{Cov}(X) = \frac{1}{n - 1} (X - \bar{X})^T (X - \bar{X})
-\]
+`Cov(X) = (1 / (n - 1)) * (X - X̄)^T (X - X̄)`
 
 Where:
 
@@ -42,4 +44,10 @@ gcc -o test_program test.c c_src/sample_covariance_lapacke.c \
 
 ```
 
-### This library is tested for Linux
+### ToDo's
+
+- [ ] CUDA Implementation
+
+- [ ] ROCm/HIP Implementation
+
+### This library is tested on Linux
